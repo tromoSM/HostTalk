@@ -1,12 +1,31 @@
 @supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
-          [tromoSM="fixed-b-row"],header{
-            background: var(--bg-blurred);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-          }
+   [tromoSM="fixed-b-row"],header{
+            background: var(--searchbar-bg);
+             backdrop-filter:var(--liquid-backdrop);
+            -webkit-backdrop-filter: var(--liquid-backdrop);
+    }
+    [tromoSM="fixed-b-row"]{
+            background: var(--searchbar-bg);
+    }
+    header{
+            background: var(--header-bg);
+    }
+    [oc=p]{
+  backdrop-filter: var(--liquid-org);
+  -webkit-backdrop-filter: var(--liquid-org);
+    }
+    [def="button"]{
+  backdrop-filter: var(--liquid-org);
+  -webkit-backdrop-filter: var(--liquid-org);      
+  background-color: var(--op-bg-b);  
+    }
 }
 
-
+@media (max-width:568px){
+[mine="yesvro"],[mine=fuhnaw]{
+    max-width: 80%;
+}
+}
 @media (max-width:428px){
 input{
     width: 87vw;
