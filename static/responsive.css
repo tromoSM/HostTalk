@@ -1,0 +1,51 @@
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+          [tromoSM="fixed-b-row"],header{
+            background: var(--bg-blurred);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+          }
+}
+
+
+@media (max-width:428px){
+input{
+    width: 87vw;
+    height: 35px;
+    font-size: large;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+[main="button"]{
+    width: 35px;
+    height: 35px;
+}
+window-inside{
+    width: 80%;
+  height: 90%;
+}
+#chat {
+  margin-bottom: 80px;
+  padding-left: 10px;
+}
+}
+@media (max-width:408px){
+input{
+    width: 81vw;
+    height: 35px;
+}
+}
+@media (max-width:306px){
+input{
+    width: 77vw;
+    height: 35px;
+}
+}
+@media (max-width:226px){
+input{
+    width: 70vw;
+    height: 35px;
+}
+}
