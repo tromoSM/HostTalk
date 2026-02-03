@@ -22,7 +22,7 @@
    --bg-el-op:#fff;
    --light-el-bg:#f0f0f0;
    --bg-headr-el-shadow:#fff;
-   --sys-d-radius:23px;
+   --sys-d-radius:19px;
    --inset-shadow-li:#333;
    --slider-liquid:inset 1px -1px 1px #009fff6b,inset -1px 0px 1px #f0f8ff4d,0px 0px 20px #5d63792e;
    --slider-backdrop:blur(3px) brightness(1.1);
@@ -149,6 +149,7 @@
 [type=range]{
   height: 20px;
   -moz-appearance: none;
+  margin-bottom: 20px;
 }
 [type=range]::-ms-thumb{
   background: var(--bg-blur-unsupported);
@@ -223,7 +224,7 @@
     transform:  translate(-5px,4px) scaleX(-1) rotate(0deg);
   }
   to{
-    transform:  translate(0px,4px) scaleX(-1) rotate(15deg);
+    transform:  translate(-1px,3px) scaleX(-1) rotate(15deg);
   }
 }
 [def="button"] {
@@ -239,9 +240,9 @@
   box-shadow: var(--liquid-border);
 }
 preview p {
-  font-size: 15px;
+  font-size: 15px !important;
   width: fit-content;
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 preview {
   display: flex;
