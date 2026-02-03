@@ -123,18 +123,6 @@
    --sk-hover-def:inset 0px 1px 0px #333, 0px 0.2px 1px #00000080 ;
   --sk-shadow1:drop-shadow(0px 0px 1px var(--sk-shadow1-r));
 }
-[type=range]::-webkit-slider-thumb{
- -webkit-appearance: none;
- appearance: none;
- background-color: transparent;
-  height: 22px;
-  transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  width: var(--liquid-asp);
- background: var(--bg-blur-unsupported);
- border-radius: 50px;
- box-shadow: 0px 0px 10px #00000021;
- margin-top:-5px;
-}
 [type=range]::-moz-range-thumb{
  background: var(--bg-blur-unsupported);
   height: 22px;
@@ -162,6 +150,10 @@
 [type=range]:active::-webkit-slider-thumb,
 [type=range]:active::-moz-range-thumb{
   transform: scale(1.4);
+}
+[f=c]{
+  display: flex;
+  flex-direction: column;
 }
 [type=range]::-moz-range-progress{
   height: 6px;
