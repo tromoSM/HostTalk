@@ -8,6 +8,7 @@
   <script src="{{url_for('static',filename='options.js')}}"></script>
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+  <meta charset="UTF-8">
 </head>
 <body>
 <header>
@@ -51,7 +52,7 @@
     </choose>
     </option-wrp>
     <p>Border radius</p>
-    <option-wrp>
+    <option-wrp f="c">
     <input value="19" type="range" min="10" max="50" event='input' action="fuh" range="border-radius">
       <preview>
         
@@ -60,5 +61,9 @@
     </option-wrp>
   </window-inside>
 </popup-window>
+<rightclick any="where">
+  <brochacho act="settings">settings</brochacho>
+  <brochacho act="invite">invite to chat</brochacho>
+</rightclick>
 </body>
 </html>
