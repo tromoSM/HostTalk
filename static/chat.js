@@ -1,5 +1,7 @@
 window.addEventListener("DOMContentLoaded",function(){
     chat=document.getElementById('chat')
+    let notificationA=new Audio(`static/recieved.mp3`)
+    let notificationB=new Audio(`static/sent.mp3`)
     const sdihkid=io()
     let usrahh=localStorage.getItem('userID')
     if(!usrahh){
@@ -14,9 +16,6 @@ window.addEventListener("DOMContentLoaded",function(){
   }
     sdihkid.emit('join',{name:usrahh})
     sdihkid.on("mainchat",d=>{
-    notificationA=new Audio(`static/recieved.mp3`)
-    notificationB=new Audio(`static/sent.mp3`)
-    
         const each$$cov=document.createElement("div")
         const each$$msg=document.createElement("p")
         each$$msg.innerHTML=`${d.msg}`
