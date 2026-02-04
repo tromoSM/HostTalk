@@ -2,19 +2,27 @@ window.addEventListener("DOMContentLoaded",function(){
     chat=document.getElementById('chat')
     let notificationA=new Audio(`static/recieved.mp3`)
     let notificationB=new Audio(`static/sent.mp3`)
+    document.querySelectorAll(`[splash="icon"]`).forEach(llkv=>{
+    llkv.addEventListener("animationend",function(){
+        llkv.closest("splash").style.display="none"
+    })
+    })
     const sdihkid=io()
     let usrahh=localStorage.getItem('userID')
     if(!usrahh){
         usrahh=prompt("Enter username to continue")
         localStorage.setItem("userID",usrahh)
     }
+    console.log(sdihkid.on("ip",e=>{e}))
+    sdihkid.on('connect',function(){
+    sdihkid.emit('join',{name:usrahh})
+    })
  const orgAud=this.window.Audio
   window.Audio=function(...args){
   const audio=new orgAud(...args)
   audio.volume=0.3
   return audio
   }
-    sdihkid.emit('join',{name:usrahh})
     sdihkid.on("mainchat",d=>{
         const each$$cov=document.createElement("div")
         const each$$msg=document.createElement("p")
