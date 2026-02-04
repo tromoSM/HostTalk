@@ -5,16 +5,17 @@ import socket
 import subprocess
 import platform
 ss='Error'
-s='Error'
+se='Error'
+pref0showall=False
 def cityboii():
-    s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
+    se=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
     try:
-        s.connect(('8.8.8.8',80))
-        f=s.getsockname()[0]
+        se.connect(('8.8.8.8',80))
+        f=se.getsockname()[0]
     except Exception:
         f='127.0.0.1'
     finally:
-        s.close()
+        se.close()
     try:
      if(platform.system()=='Windows'):
         ss=subprocess.check_output(['powershell',"-Command","(Get-NetConnectionProfile | Where-object {$_.InterfaceAlias -like '*Wi-Fi*'}).Name"],
@@ -23,7 +24,7 @@ def cityboii():
          ss=subprocess.check_output(['iwgetid',"-r"],text=True).strip()
      elif(platform.system()=='Darwin'):
          ss=subprocess.check_output(['/System/Library/PrivateFrameworks/Apple80211.framework/Version/Current/Resources/airport',"-I"],text=True).split(
-             'SSID: '[1].splitlines()[0])
+             'SSID: ')[1].splitlines()[0]
     except Exception as e:
         print(f'Failed to get your ssid | {e}')
         return f'Failed to get your ssid | {e}'
@@ -37,7 +38,6 @@ users={}
 imimname='group'
 @app.route('/',methods=["GET"])
 def w():
-    global abv
     return render_template('index.html')
 @s.on("mainchat")
 def chat(dih):
@@ -46,7 +46,11 @@ def chat(dih):
     mainchat.append(d)
     mainchat[:]=mainchat[-10:]
     emit("mainchat",d,broadcast=True)
-    print(f"│ Notification : {dihname} sent a message ")
+    if pref0showall==True:
+        tempmessageshow=f'"{dih}"'
+    else:
+        tempmessageshow=""
+    print(f"│ Notification : {dihname} sent a message {tempmessageshow} ")
 @s.on("join")
 def usrn(dih):
     users[request.sid]=dih['name']
@@ -57,6 +61,12 @@ def usrn(dih):
 def sybau():
     print(f"│ User disconnected : {users.get(request.sid,request.sid)}")
     users.pop(request.sid,None)
+@app.route('/api/ip')
+def ip():
+    ip,ssid=cityboii()
+    return jsonify({"ip": ip,
+                    "ssid":ssid})
+
 if __name__=='__main__':
     print(
         """
@@ -76,4 +86,7 @@ if __name__=='__main__':
     print(f"│ Lan access (other devices/wifi): http://{sss}:6767/")
     print(f"│ Wifi SSID : {ssss}")
     print(" ")
+    print(f"│ Opening : http://{sss}:6767/")
+    webbrowser.open_new_tab(f'http://{sss}:6767/')
+    print('')
     s.run(app,host="0.0.0.0",port=6767,debug=False)
