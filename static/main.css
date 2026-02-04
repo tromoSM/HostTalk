@@ -38,7 +38,7 @@
    --color-opp:rgb(255, 255, 255);
    --sk-shadow1-r:#5e5e5e;
    --el-popup:#0b0b0b;
-   --bg-bubble-main:#27aeff;
+   --bg-bubble-main:#07a0ff;
    --slider-backdrop:blur(3px) brightness(2.5);
    --slider-liquid:inset 1px -1px 1px #1aa9ff8a,inset -1px 0px 1px #f0f8ff4d;
    --bg-el-li:#eeeded;
@@ -248,8 +248,7 @@ preview {
   box-shadow: var(--sk-hover-def);
 }
 [action="showset"]{
-  right: 0;
-  margin-right: 15px;
+  right: 15px;
   position: fixed;
 }
 header *{
@@ -560,8 +559,86 @@ window-inside p {
       transform: translate(0px,-12px) scale(1);
   }
 }
+[splash="icon"]{
+width: 150px;
+stroke: var(--bg-bubble-main);
+fill: var(--bg-bubble-main);
+animation: icon-in 1s;
+}
+@keyframes icon-in{
+  from{stroke-width: 8;}
+  to{stroke-width: 1;}
+}
+splash{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-main);
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: +6666;
+  flex-direction: column;
+}
+[tag="icon"]{
+  color: #0089ff;
+  font-size: 20px;
+  font-weight: bolder;
+}
 [setmarg='02']{
   margin: 2px 0px;
+}
+rightclick{
+  display: none;
+  flex-direction: column;
+  background: var(--bg-secondary-el);
+  width: fit-content;
+  padding: 5px;
+  z-index: 1000;
+  position: absolute;
+  animation: scablur 0.3s ;
+  border-radius: 15px;
+  color: var(--color-opp);
+}
+flex-when-desk-r{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+flex-when-desk-r h3{
+  color: var(--color-opp);
+  font-size: 32px;
+  padding: 0;
+  margin: 0;
+}
+[f=con]{height: fit-content !important;}
+flex-when-desk-r svg {
+fill: var(--bg-bubble-main);
+  width: 120px;
+  stroke-width: 1;
+  stroke: var(--bg-bubble-main);
+  filter: drop-shadow(0px 0px 10px #07a0ff26);
+  margin-right: 10px;
+}
+flex-c{
+  display: flex;
+  flex-direction: column;
+}
+fill{color: var(--color-opp);}
+brochacho:hover{
+  background: #6a6a6a33;
+}
+brochacho{
+  padding: 3px 10px;
+  cursor: pointer;
+  background: #6a6a6a00;
+  margin: 2px 0px 0px 0px;
+  transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  border-radius: 8px;
+  position: relative;
 }
 *{
     font-family: SF Pro;
