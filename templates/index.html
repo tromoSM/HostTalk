@@ -1,26 +1,30 @@
 <!DOCTYPE html>
-<html ios="16">
+<html ios="16" lang="en">
   <title>HostTalk</title>
 <head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#07a0ff">
+  <link rel="manifest" href="{{url_for('static',filename='manifest.json')}}">
+  <script src="{{url_for('static',filename='socket.io.min.js')}}"></script>
   <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
   <link rel="stylesheet" href="{{url_for('static',filename='responsive.css')}}">
+  <link rel="icon" href="{{url_for('static',filename='favicon.ico')}}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{url_for('static',filename='favicon_ios.png')}}">
   <script src="{{url_for('static',filename='chat.js')}}"></script>
   <script src="{{url_for('static',filename='options.js')}}"></script>
   <script src="{{url_for('static',filename='rightclick.js')}}"></script>
-  <!--<script src="{{url_for('static',filename='notifications.js')}}"></script>-->
-  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="{{url_for('static',filename='customization.js')}}"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-  <meta charset="UTF-8">
 </head>
 <body>
 <header>
-  <button action="showset" def="button">⋮</button>
+  <button action="showset" def="button" type="button">⋮</button>
 </header>
   <div id="chat"></div>
   <div tromoSM="fixed-b-row">
   <div oc="p">
-  <input dih="yo" autocomplete="off">
-  <button onclick="sendingmyahh()" main="button"><svg viewBox="0 0 41 48" direction='ltr' xmlns='http://www.w3.org/2000/svg' version='1.1'>
+  <input dih="yo" autocomplete="off" >
+  <button onclick="sendingmyahh()" main="button" type="button"><svg viewBox="0 0 41 48" direction='ltr' xmlns='http://www.w3.org/2000/svg' version='1.1'>
 <g fill-rule='nonzero' transform='scale(1,-1) translate(0,-48.103515625)'>
 <path  d='M 20.947265625,4.275390625     C 21.248046875,4.275390625 21.462890625,4.51171875 21.462890625,4.76953125     L 21.462890625,37.705078125     L 21.3984375,42.259765625     L 25.8671875,37.748046875     L 35.556640625,28.05859375     C 35.62109375,27.994140625 35.771484375,27.9296875 35.943359375,27.9296875     C 36.201171875,27.9296875 36.4375,28.14453125 36.4375,28.466796875     C 36.4375,28.6171875 36.39453125,28.724609375 36.287109375,28.83203125     L 21.3125,43.677734375     C 21.2265625,43.78515625 21.119140625,43.828125 20.947265625,43.828125     C 20.796875,43.828125 20.689453125,43.78515625 20.603515625,43.677734375     L 5.62890625,28.83203125     C 5.521484375,28.724609375 5.478515625,28.6171875 5.478515625,28.466796875     C 5.478515625,28.14453125 5.71484375,27.9296875 5.97265625,27.9296875     C 6.123046875,27.9296875 6.294921875,27.994140625 6.359375,28.05859375     L 16.048828125,37.748046875     L 20.517578125,42.259765625     L 20.453125,37.705078125     L 20.453125,4.76953125     C 20.453125,4.51171875 20.66796875,4.275390625 20.947265625,4.275390625     Z ' />
 </g>
@@ -57,9 +61,12 @@
     <option-wrp f="c">
     <input value="19" type="range" min="10" max="50" event='input' action="fuh" range="border-radius">
       <preview>
-        
         <p mine="yesvro">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <p mine="yesvro">Lorem ipsum dolor sit amet.</p></preview>
+    </option-wrp>
+    <p>Placeholder</p>
+    <option-wrp>
+      <div oc="p"><input placeholder="Enter a placeholder" tromoSM="placein" type="text"></div>
     </option-wrp>
   </window-inside>
 </popup-window>
