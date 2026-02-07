@@ -7,13 +7,12 @@ window.addEventListener("DOMContentLoaded",function(){
         llkv.closest("splash").style.display="none"
     })
     })
-    const sdihkid=io()
+    window.sdihkid=io()
     let usrahh=localStorage.getItem('userID')
     if(!usrahh){
         usrahh=prompt("Enter username to continue")
         localStorage.setItem("userID",usrahh)
     }
-    console.log(sdihkid.on("ip",e=>{e}))
     sdihkid.on('connect',function(){
     sdihkid.emit('join',{name:usrahh})
     })
@@ -67,5 +66,8 @@ window.addEventListener("DOMContentLoaded",function(){
 
     function focusin(){ document.querySelector('[dih="yo"]').focus()}
     document.querySelector('[oc="p"]').addEventListener('click',focusin)
-    window.addEventListener('keydown',focusin)
+    window.addEventListener('keydown',(dih)=>{
+        if(dih.target.closest(`popup-window`))return
+        focusin()
+    })
 })
