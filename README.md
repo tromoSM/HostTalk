@@ -14,6 +14,23 @@
 - more themes and light,dark mode support 
 ## Preview
 ![preview](https://github.com/tromoSM/HostTalk/blob/main/Assets/gitpreview.webp?raw=true)
+## Requirements
+### Windows
+- Windows 10 (1909 or newer)
+- Windows 11 (All)
+>[!NOTE]
+> System tray and console control only exist in windows
+### Linux
+>[!TIP]
+> iwgetid is used. this requires wireless-tools
+#### Ubuntu
+- Ubuntu 20.04 LTS+
+#### Debian
+- Debian 11+
+#### Arch Linux
+- Fedora 335+
+### MacOS
+- MacOS 11 (Big sur) or later
 ## Opening on another device
 - Make sure the devices are connected to the same wifi
 - Turn off any VPN
