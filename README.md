@@ -30,4 +30,7 @@
 ### Socket io 
 - this project uses third-party open source components
 
+| future features |  description |
+|--|--|
+| Notifications | Notifications when away |
 #### © 2026 tromoSM. All rights reserved.
