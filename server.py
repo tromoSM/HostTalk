@@ -8,6 +8,7 @@ import platform
 import os
 import sys
 import shutil
+
 if(platform.system()=="Windows"):
     import pystray
     from PIL import Image
@@ -19,8 +20,9 @@ APPROOT=os.path.join(APPDATAAHH,"HostTalk")
 os.makedirs(APPROOT,exist_ok=True)
 def exe():
    if getattr(sys,'frozen',False):
-      return os.path.dirname(sys.executable)
+      return sys._MEIPASS
    return os.path.dirname(os.path.abspath(__file__))
+
 temp0dih0server=exe()
 def packurbagsahh(dih,seconddih):
  os.makedirs(seconddih,exist_ok=True)
