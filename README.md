@@ -3,7 +3,7 @@
 #### HostTalk is a self hosted local network messaging system with cross-platform support.
 ---
 ## Installaion
-- get the latest installer or the portable edition from [here](https://github.com/tromoSM/CryptivisX/releases/tag/v1.1) and install
+- get the latest installer or the portable edition from [here](https://github.com/tromoSM/HostTalk/releases/latest) and install
 ## Features
 - Real time chat syncing
 - Works on LAN/local-network(same wifi) while offline
