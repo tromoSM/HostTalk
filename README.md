@@ -51,4 +51,7 @@
 | future features |  description |
 |--|--|
 | Notifications | Notifications when away |
+
+code : v0.9
+releases : v0.9
 #### © 2026 tromoSM. All rights reserved.
