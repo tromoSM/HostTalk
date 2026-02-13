@@ -15,6 +15,7 @@
 ## Preview
 ![preview](https://github.com/tromoSM/HostTalk/blob/main/Assets/gitpreview.webp?raw=true)
 ## Requirements
+- 6767 port needs to be open in the local network
 ### Windows
 - Windows 10 (1909/2019 nov or newer)
 - Windows 11 (All)
