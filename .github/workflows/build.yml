@@ -1,0 +1,108 @@
+name: Build HostTalk Portable
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller
+          if (Test-Path requirements.txt) { pip install -r requirements.txt }
+
+      - name: Build Windows EXE
+        run: |
+          pyinstaller --noconfirm --onefile --windowed `
+          --name HostTalk-portable-edition `
+          --icon icon.ico `
+          --add-data "static;static" `
+          --add-data "templates;templates" `
+          server.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HostTalk-portable-edition-windows
+          path: dist/HostTalk-portable-edition.exe
+
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Build macOS binary
+        run: |
+          pyinstaller --noconfirm --onefile --windowed \
+          --name HostTalk-portable-edition \
+          --icon icon.ico \
+          --add-data "static:static" \
+          --add-data "templates:templates" \
+          server.py
+
+      - name: Create app bundle
+        run: |
+          mkdir -p HostTalk-portable-edition.app/Contents/MacOS
+          cp dist/HostTalk-portable-edition HostTalk-portable-edition.app/Contents/MacOS/
+
+      - name: Create DMG
+        run: |
+          hdiutil create -volname "HostTalk-portable-edition" \
+          -srcfolder HostTalk-portable-edition.app \
+          -ov -format UDZO HostTalk-portable-edition.dmg
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HostTalk-portable-edition-macos
+          path: HostTalk-portable-edition.dmg
+
+
+  build-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install pyinstaller
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Build Linux binary
+        run: |
+          pyinstaller --noconfirm --onefile \
+          --name HostTalk-portable-edition \
+          --add-data "static:static" \
+          --add-data "templates:templates" \
+          server.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HostTalk-portable-edition-linux
+          path: dist/HostTalk-portable-edition
