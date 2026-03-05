@@ -1,0 +1,10 @@
+Flask
+Flask-SocketIO
+pystray
+Pillow
+eventlet
+Flask
+Flask-SocketIO
+eventlet
+pystray
+Pillow
