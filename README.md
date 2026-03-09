@@ -4,6 +4,10 @@
 ---
 ## Installaion
 - get the latest installer or the portable edition from [here](https://github.com/tromoSM/HostTalk/releases/latest) and install
+- or run this in your cmd (for windows only)
+  ```bash
+  winget install hosttalk
+  ```
 ## Features
 - Real time chat syncing
 - Works on LAN/local-network(same wifi) while offline
