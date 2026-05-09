@@ -59,4 +59,4 @@
 code : v0.9
 releases : v0.9
 #### [send feedback or request features](https://tromosm.ct.ws/?feedback=true)
-#### © 2026 tromoSM. All rights reserved.
+#### © 2026 tromoSM. Licensed under apache 2.0.
